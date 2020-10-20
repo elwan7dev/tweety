@@ -31,7 +31,7 @@
         </section>
         
         {{-- main content --}}
-        <section class="px-8">
+        <section class="px-16 mb-2">
             <main class="container mx-auto">
                 @yield('content')
             </main>
