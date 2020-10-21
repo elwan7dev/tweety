@@ -1,5 +1,5 @@
 <div class="flex border-b border-b-gray-400 p-4">
-    <div class="mr-2 ">
+    <div class="mr-2 flex-shrink-0 ">
         <img src="{{$tweet->user->avatar}}" alt="avatar" class="rounded-full mr-2">
     </div>
     <div>
