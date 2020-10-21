@@ -15,11 +15,9 @@
 
         {{-- timeline --}}
         <div class="border border-gray-300 rounded-lg px-1" >
-            @include('_tweet')
-            @include('_tweet')
-            @include('_tweet')
-            @include('_tweet')
-            @include('_tweet')
+            @foreach ($tweets as $tweet)
+                @include('_tweet')
+            @endforeach
         </div>
     </div>
 

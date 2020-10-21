@@ -4,7 +4,7 @@
         @foreach (range(1,8) as $idnex)
         <li class="mb-3">
             <div class="flex items-center text-lg">
-                <img src="images/avatar.svg" alt="avatar" class="h-10 w-10 inline rounded-full mr-2">
+                <img src="https://i.pravatar.cc/40" alt="avatar" class="rounded-full mr-2">
                 John Doe
             </div>
         </li>
