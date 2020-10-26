@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Tweet;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +22,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $tweets = Tweet::all();
+        // $tweets = Tweet::all();
 
         return view('home' , [
             'tweets' => auth()->user()->timeline(),

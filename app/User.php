@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\User;
 use App\Tweet;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -48,19 +49,28 @@ class User extends Authenticatable
     }
 
     /**
-     * Get the tweets for the user.
-     */
-    public function tweets()
-    {
-        return $this->hasMany('App\Tweet');
-    }
-
-    /**
-     * get all latest tweet
+     * get all latest tweet for the user
      */
     public function timeline()
     {
-        return Tweet::latest()->get();
+        // get the user's tweets
+        return Tweet::where('user_id' , $this->id)->latest()->get();
     }
 
+    /**
+     * follow others
+     */
+    public function follow(User $user)
+    {
+        return $this->follows()->save($user);
+    }
+    /**
+     * Relationship function
+     */
+    public function follows()
+    {
+        return $this->belongsToMany('App\User', 'follows', 'user_id', 'following_user_id');
+    }
+
+    
 }
