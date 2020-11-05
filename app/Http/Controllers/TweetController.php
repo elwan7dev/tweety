@@ -20,10 +20,10 @@ class TweetController extends Controller
             'body' => 'required|max:255',
         ]);
 
-
+//        create a record and store data in DB.
         Tweet::create([
             'user_id' => auth()->user()->id,
-            // 'body' => $request->input('body')
+//             'body' => $request->input('body')
             'body' => $validatedData['body']
         ]);
 

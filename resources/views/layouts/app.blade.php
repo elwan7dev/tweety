@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Tweety') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -22,21 +22,37 @@
 <body>
     <div id="app">
         {{-- header section --}}
-        <section class="px-8 py-4 mb-4"> 
+        <section class="px-8 py-4 mb-4">
             <header class="container mx-auto">
                 <h1>
-                    <img src="images/logo.svg" alt="tweety">
+                    <img src="/images/logo.svg" alt="tweety">
                 </h1>
             </header>
         </section>
-        
+
         {{-- main content --}}
         <section class="px-16 mb-2">
             <main class="container mx-auto">
-                @yield('content')
+                {{-- Content wrapper --}}
+                <div class="lg:flex lg:justify-between">
+                    {{-- sidebar --}}
+                    <div class="lg:w-32 ml-4">
+                        @include('_sidebar-links')
+                    </div>
+
+                    {{-- feeds --}}
+                    <div class="lg:flex-1 lg:mx-10" style="max-width: 700px">
+                        @yield('content')
+                    </div>
+
+                    {{-- friends-list --}}
+                    <div class="lg:w-1/6">
+                        @include('_friends-list')
+                    </div>
+                </div>
             </main>
         </section>
-        
+
     </div>
 </body>
 </html>

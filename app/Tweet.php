@@ -21,5 +21,6 @@ class Tweet extends Model
         return $this->belongsTo('App\User');
     }
 
-   
+
+
 }
